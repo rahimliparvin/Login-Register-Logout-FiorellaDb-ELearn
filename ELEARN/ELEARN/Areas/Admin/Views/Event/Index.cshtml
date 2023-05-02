@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Event>
+
+@{
+    ViewData["Title"] = "Events";
+}
+
+
+
+<div style="padding-left:200px" class="container my-5">
+
+    <h1>Events Page</h1>
+    <a asp-action="Create" style="border:1px solid green;margin-bottom:20px;;margin-top:20px;margin-left:850px;text-decoration-color:white;" class="btn btn-outline-success">Create</a>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">Event Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                @foreach (var events in Model)
+                {
+
+                <tr>
+
+
+                    <td>@events.Title</td>
+                    <td>@events.Description</td>
+                    <td>
+                        <a asp-action="Detail" asp-route-id="@events.Id" style="border:1px solid blue" class="btn btn-outline-info">Info</a>
+                        <a asp-action="Edit" asp-route-id="@events.Id" style="border:1px solid green" class="btn btn-outline-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@events.Id" style="border:1px solid red" class="btn btn-outline-danger">Delete</a>
+                    </td>
+
+                </tr>
+
+                }
+
+
+
+        </tbody>
+    </table>
+
+
+</div>
+

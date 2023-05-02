@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "News Create";
+}
+
+
+
+<div style="padding-left:200px" class="container my-5">
+    <h1>Create News</h1>
+     <a asp-action="Index" style="border:1px solid red;margin-bottom:20px;margin-top:20px;margin-left:700px;text-decoration-color:white;" class="btn btn-outline-danger">Go to News</a> <a asp-action="Create" style="border:1px solid green;margin-bottom:20px;;margin-top:20px;margin-left:10px;text-decoration-color:white;" class="btn btn-outline-success">Create</a>
+    <form class="forms-sample">
+        <label for="exampleFormControlInput1">Add News Title</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="News Title">
+        <label for="exampleFormControlInput1">Add News Image</label>
+        <input class="form-control" type="file" id="customFile">
+        <label for="exampleFormControlInput1">Add Author Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Author Name">
+        <label for="exampleFormControlInput1">Add News Text</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="News Text">
+        <label for="exampleFormControlInput1">Add News Date</label>
+        <input type="date" value="2022-02-02" />
+       
+        <div class="my-3">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <a type="button" asp-action="Index" class="btn btn-light">Cancel</a>
+        </div>
+    </form>
+</div>

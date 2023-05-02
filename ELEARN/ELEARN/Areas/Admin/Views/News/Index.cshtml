@@ -1,0 +1,51 @@
+﻿@model IEnumerable<News>
+@{
+    ViewData["Title"] = "News Page";
+}
+
+
+
+<div style="padding-left:200px" class="container my-5">
+
+<h1>News Page</h1>
+<a asp-action="Create" style="border:1px solid green;margin-bottom:20px;;margin-top:20px;margin-left:850px;text-decoration-color:white;" class="btn btn-outline-success">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th scope="col">News Title</th>
+            <th scope="col">Date</th>
+            <th scope="col">Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            @foreach (var news in Model)
+            {
+
+              <tr>
+
+             
+                <td>@news.Title</td>
+                <td>@news.CreateTime.ToString("MMMM dd, yyyy")</td>
+                <td>
+                    <a asp-action="Detail" asp-route-id="@news.Id" style="border:1px solid blue" class="btn btn-outline-info">Info</a>
+                    <a asp-action="Edit" asp-route-id="@news.Id" style="border:1px solid green" class="btn btn-outline-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@news.Id" style="border:1px solid red" class="btn btn-outline-danger">Delete</a>
+                </td>
+
+              </tr>
+
+            }
+
+
+
+    </tbody>
+</table>
+
+
+</div>
+
+
+

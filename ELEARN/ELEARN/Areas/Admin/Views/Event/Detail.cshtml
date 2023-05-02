@@ -1,0 +1,46 @@
+﻿@model Event
+@{
+    ViewData["Title"] = "Event Detail";
+}
+
+
+<div style="padding-left:200px" class="container my-5">
+
+    <h1>News Detail</h1>
+    <a asp-action="Index" style="border:1px solid red;margin-bottom:20px;margin-top:20px;margin-left:700px;text-decoration-color:white;" class="btn btn-outline-danger">Go to Events</a> <a asp-action="Create" style="border:1px solid green;margin-bottom:20px;;margin-top:20px;margin-left:10px;text-decoration-color:white;" class="btn btn-outline-success">Create</a>
+    <table class="table">
+        <thead>
+            <tr>
+             
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+
+            <tr>
+
+             
+                <td>@Model.Title</td>
+                <td>@Model.Description</td>
+                <td>@Model.CreateTime.ToString("MMMM dd, yyyy")</td>
+               
+
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+
+
+</div>
+
+
+
+

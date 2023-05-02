@@ -1,0 +1,43 @@
+﻿@using ELEARN.Areas.Admin.ViewModels;
+@model CourseDetailVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+<div style="padding-left:200px" class="container my-5">
+    <h1>Detail</h1>
+
+
+    <div class="form-group">
+        <label><strong>Name</strong></label>
+        <input class="form-control" disabled type="text" value="@Model.Name" asp-for="Name"></input>
+    </div>
+
+    <div class="form-group">
+        <label class="mt-3"><strong>Description</strong></label>
+        <textarea class="form-control" disabled type="text" id="Product-Desc" value="@Model.Description" asp-for="Description"></textarea>
+    </div>
+
+    <div class="from-group">
+        <label class="mt-3"><strong>Price</strong></label>
+        <input class="form-control" disabled type="number" id="customFile" asp-for="@Model.Price">
+    </div>
+
+    <div class="from-group">
+        <label class="mt-3"><strong>Author's Name</strong></label>
+        <input class="form-control" disabled type="text" id="customFile" asp-for="AuthorName">
+    </div>
+    <strong>Images</strong>
+    <div class="form-group">
+
+        @foreach (var item in Model.Images)
+        {
+            <img class="my-2" style="width:150px;height:150px" src="~/images/@item.Image" />
+        }
+
+    </div>
+
+    <a class="btn btn-info" asp-action="Index">Back</a>
+
+</div>
